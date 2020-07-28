@@ -1,0 +1,26 @@
+---
+-
+  become: true
+  hosts: webservers
+  name: "Install metric beat"
+  tasks:
+    -
+      command: "curl -L -O https://artifacts.elastic.co/downloads/beats/metricbeat/metricbeat-7.8.0-amd64.deb"
+      name: "Download metricbeat"
+    -
+      command: "sudo dpkg -i metricbeat-7.8.0-amd64.deb"
+      name: "install metricbeat"
+    -
+      copy:
+        dest: /etc/metricbeat/metricbeat.yml
+        src: /etc/metricbeat/metricbeat_config.yml
+      name: "drop in metricbeat config"
+    -
+      command: "metricbeat modules enable system"
+      name: "enable and configure docker module for metric beat"
+    -
+      command: "metricbeat setup"
+      name: "setup metric beat"
+    -
+      command: "service metricbeat start"
+      name: "start metric beat"
