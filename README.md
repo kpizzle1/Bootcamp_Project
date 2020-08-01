@@ -23,7 +23,7 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
-
+It acts as a gateway distributes traffic from clients across multiple servers without the clients having to understand how many servers are in use or how they are configured.Because the load balancer sits between the clients and the servers it can enhance the user experience by providing additional security, performance, resilience and simplify scaling your website. 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
 - _TODO: What does Filebeat watch for?_It collect docker logs
 - _TODO: What does Metricbeat record?_It logs the connections 
@@ -108,7 +108,9 @@ SSH into the control node and follow the steps below:
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
+- _Which file is the playbook? Where do you copy it?_https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > /etc/ansible/files/filebeat-config.yml
+dpkg -i filebeat-7.4.0-amd64.deb
+Copy the Filebeat configuration file from your Ansible container to your WebVM's
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_. /etc/ansible/hosts. Add the IP to the config file 
 - _Which URL do you navigate to in order to check that the ELK server is running? http://52.247.27.37:5601/app/kibana#/home
 
