@@ -6,7 +6,7 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
-  - _TODO: Enter the playbook file._
+  
 
 This document contains the following details:
 - Description of the Topologu
@@ -33,10 +33,10 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Jump Box | Gateway  | 10.0.0.4   | Linux            |
+| Web 1    | Webserver| 10.0.0.5   | Linux            |
+| Web 3    | Webserver| 10.0.0.6   | Linux            |
+| ELK      | ELK Stack| 10.1.0.5   | Linux            |
 
 ### Access Policies
 
